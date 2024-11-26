@@ -6,8 +6,7 @@ console.log(argv)
 
 const nome = argv[0].split('=')[1]
 
-console.log(nome)
 
 const idade = argv[1].split('=')[1]
 
-console.log(idade)
+console.log(`O nome dele(a) e ${nome} e ele(a) tem ${idade}`)
