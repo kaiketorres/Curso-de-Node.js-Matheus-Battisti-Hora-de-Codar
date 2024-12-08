@@ -17,7 +17,12 @@ if(!name){
     return res.end()
   })
 } else {
-  fs.writeFile('texto.txt', name, () => {
+
+  const nameNewLine = name + ',\r\n'
+
+
+
+  fs.appendFile('texto.txt', nameNewLine, () => {
     res.writeHead(302, {
       location: '/'
     })
