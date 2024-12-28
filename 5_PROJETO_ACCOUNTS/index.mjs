@@ -10,7 +10,7 @@ function operation() {
   inquirer.prompt([{
       type: 'list',
       name: 'action',
-      message: 'O que voce dddeseja fazer?',
+      message: 'O que voce deseja fazer?',
       choices: ['Criar conta', 'Depositar', 'Consultar saldo', 'Sacar', 'Sair']
     }])
     .then((anwser) => {
@@ -50,11 +50,14 @@ function buildAccount() {
       message: 'Digite um nome para sua conta:'
     }])
     .then((anwser) => {
+
       const accountName = anwser['accountName']
-      console.info(accountName)
+
+
       if (!fs.existsSync('accounts')) {
         fs.mkdirSync('accounts')
       }
+
       if (fs.existsSync(`accounts/${accountName}.json`)) {
         console.log(chalk.bgRed.black('Esta conta ja existe, escolha outro nome!'))
         buildAccount()
@@ -129,10 +132,7 @@ function addAmount(accountName, amount) {
   accountData.balance = parseFloat(amount) + parseFloat(accountData.balance)
 
 
-  fs.writeFileSync(
-    `accounts/${accountName}.json`,
-    JSON.stringify(accountData),
-    function (err) {
+  fs.writeFileSync(`accounts/${accountName}.json`,JSON.stringify(accountData),function (err) {
       console.log(err)
     }
   )
@@ -141,14 +141,34 @@ function addAmount(accountName, amount) {
 
 }
 
+
+
+
+
+
+
+
+
 function getAccount(accountName) {
   const accountJSON = fs.readFileSync(`accounts/${accountName}.json`, {
     encoding: 'utf8',
-    flag: 'r'
+    flag:  'r'
   })
 
   return JSON.parse(accountJSON)
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 function getAccountBalance() {
   inquirer.prompt([{
@@ -156,7 +176,7 @@ function getAccountBalance() {
       message: 'Qual e o nome da sua conta:'
     }])
     .then((answer) => {
-
+      
       const accountName = answer['accountName']
 
       if (!checkAccount(accountName)) {
