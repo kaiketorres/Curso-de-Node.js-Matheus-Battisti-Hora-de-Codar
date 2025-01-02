@@ -1,0 +1,27 @@
+{
+  "name": "curso-de-node.js-matheus-battisti-hora-de-codar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon users.html localhost 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaiketorres/Curso-de-Node.js-Matheus-Battisti-Hora-de-Codar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kaiketorres/Curso-de-Node.js-Matheus-Battisti-Hora-de-Codar/issues"
+  },
+  "homepage": "https://github.com/kaiketorres/Curso-de-Node.js-Matheus-Battisti-Hora-de-Codar#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "path": "^0.12.7"
+  }
+}
